@@ -5,5 +5,5 @@ import '../../../core/error/filure_class.dart';
 
 abstract class HomeRepo{
   Future <Either<Filure,List<BookEntity>>> fetchFeaturedBook();
-  Future <Either<Filure,List<BookEntity>>> fetchNewsedBook();
+  Future <Either<Filure,List<BookEntity>>> fetchNewesdBook();
 }
