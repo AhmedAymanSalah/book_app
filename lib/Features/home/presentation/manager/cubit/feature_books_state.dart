@@ -7,10 +7,10 @@ class FeatureBooksInitial extends FeatureBooksState {}
 
 class FeatureBooksLoading extends FeatureBooksState {}
 
-class FeatureBooksError extends FeatureBooksState {
+class FeatureBooksFailure extends FeatureBooksState {
   final String errormessage;
 
-  FeatureBooksError(this.errormessage);
+  FeatureBooksFailure(this.errormessage);
 }
 
 class FeatureBooksSuccess extends FeatureBooksState {
