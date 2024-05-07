@@ -5,9 +5,8 @@ import 'package:dartz/dartz.dart';
 import '../error/filure_class.dart';
 
 abstract class UseCase<Type, Parameter> {
-  Future<Either<Filure, Type>> call([Parameter param]);
+  Future<Either<Failure, Type>> call([Parameter param]);
 }
-
 
 class NoParameter {}
 

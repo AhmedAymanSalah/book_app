@@ -4,6 +4,7 @@ import 'package:dartz/dartz.dart';
 import 'package:bookly/Features/home/data/data_source/home_local_data_source.dart';
 import 'package:bookly/Features/home/data/data_source/home_remote_data_source.dart';
 import 'package:bookly/core/error/filure_class.dart';
+import 'package:dio/dio.dart';
 
 import '../../domain/entities/book_entity.dart';
 import '../../domain/repos/home_repo.dart';
@@ -17,7 +18,7 @@ class HomeRepoImple extends HomeRepo {
     required this.homeLocalDataSource,
   });
   @override
-  Future<Either<Filure, List<BookEntity>>> fetchFeaturedBook() async {
+  Future<Either<Failure, List<BookEntity>>> fetchFeaturedBook() async {
     try {
       List<BookEntity> books;
       books = homeLocalDataSource.fetchFeaturedBook();
@@ -27,12 +28,17 @@ class HomeRepoImple extends HomeRepo {
       books = await homeRemoteDataSource.fetchFeaturedBook();
       return right(books);
     } catch (e) {
-      return left(Filure());
+      // ignore: deprecated_member_use
+      if (e is DioError) {
+        return left(ServerFailure.fromDiorError(e));
+      }else{
+        return left(ServerFailure(e.toString()));
+      }
     }
   }
 
   @override
-  Future<Either<Filure, List<BookEntity>>> fetchNewesdBook() async {
+  Future<Either<Failure, List<BookEntity>>> fetchNewesdBook() async {
     try {
       List<BookEntity> books;
       books = homeLocalDataSource.fetchNewesdBook();
@@ -42,7 +48,12 @@ class HomeRepoImple extends HomeRepo {
       books = await homeRemoteDataSource.fetchNewesdBook();
       return right(books);
     } catch (e) {
-      return left(Filure());
+      // ignore: deprecated_member_use
+      if (e is DioError) {
+        return left(ServerFailure.fromDiorError(e));
+      }else{
+        return left(ServerFailure(e.toString()));
+      }
     }
   }
 }

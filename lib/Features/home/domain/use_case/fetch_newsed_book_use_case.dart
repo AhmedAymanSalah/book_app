@@ -1,4 +1,3 @@
-
 import 'package:bookly/core/use_case/use-case.dart';
 import 'package:dartz/dartz.dart';
 
@@ -12,7 +11,7 @@ class FetchFeaturedBookUseCase extends UseCase<List<BookEntity>, NoParameter> {
   FetchFeaturedBookUseCase({required this.homeRepo});
 
   @override
-  Future<Either<Filure, List<BookEntity>>> call([NoParameter? param]) async{
+  Future<Either<Failure, List<BookEntity>>> call([NoParameter? param]) async {
     return await homeRepo.fetchFeaturedBook();
   }
 }
