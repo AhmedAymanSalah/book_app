@@ -1,5 +1,5 @@
-import 'package:bookly/Features/home/domain/book_entity.dart';
 
+import '../../../../domain/entities/book_entity.dart';
 import 'access_info.dart';
 import 'sale_info.dart';
 import 'search_info.dart';

@@ -3,9 +3,10 @@ import 'package:dartz/dartz.dart';
 
 import 'package:bookly/Features/home/data/data_source/home_local_data_source.dart';
 import 'package:bookly/Features/home/data/data_source/home_remote_data_source.dart';
-import 'package:bookly/Features/home/domain/book_entity.dart';
-import 'package:bookly/Features/home/repos/home_repo.dart';
 import 'package:bookly/core/error/filure_class.dart';
+
+import '../../domain/entities/book_entity.dart';
+import '../../domain/repos/home_repo.dart';
 
 class HomeRepoImple extends HomeRepo {
   final HomeRemoteDataSource homeRemoteDataSource;

@@ -1,9 +1,10 @@
-import 'package:bookly/Features/home/repos/home_repo.dart';
+
 import 'package:bookly/core/use_case/use-case.dart';
 import 'package:dartz/dartz.dart';
 
 import '../../../../core/error/filure_class.dart';
-import '../book_entity.dart';
+import '../entities/book_entity.dart';
+import '../repos/home_repo.dart';
 
 class FetchFeaturedBookUseCase extends UseCase<List<BookEntity>, NoParameter> {
   final HomeRepo homeRepo;

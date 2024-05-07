@@ -1,10 +1,10 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:bookly/Features/home/data/model/book_model/book_model/book_model.dart';
-import 'package:bookly/Features/home/domain/book_entity.dart';
 import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/api_services.dart';
 
 import '../../../../core/utils/function/save_data_box.dart';
+import '../../domain/entities/book_entity.dart';
 
 abstract class HomeRemoteDataSource {
   Future<List<BookEntity>> fetchFeaturedBook();
